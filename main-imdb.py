@@ -17,8 +17,6 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS block is REMOVED
-
 load_dotenv()
 
 IS_DEPLOYED = os.environ.get('HOSTNAME') == 'streamlit' or os.environ.get('USER') == 'streamlit'
