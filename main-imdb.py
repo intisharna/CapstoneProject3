@@ -17,8 +17,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-gradient_css = """
-<style>
+gradient_css = """<style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 html, body, [class*="st-"] {
@@ -30,20 +29,22 @@ html, body, [class*="st-"] {
     background-attachment: fixed;
     background-size: cover;
     color: #FFFFFF;
-    width: 320px !important; /* Fixed width */
-    min-width: 320px !important; /* Ensure minimum width */
-    max-width: 320px !important; /* Ensure maximum width */
+    width: 320px !important;
+    min-width: 320px !important;
+    max-width: 320px !important;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-/* Ensure text elements within sidebar wrap correctly */
 [data-testid="stSidebar"] div,
 [data-testid="stSidebar"] p,
 [data-testid="stSidebar"] li,
 [data-testid="stSidebar"] label,
 [data-testid="stSidebar"] .st-emotion-cache-16txtl3 {
     color: #FFFFFF !important;
-    overflow-wrap: break-word !important; /* Force word wrapping */
-    white-space: normal !important; /* Ensure text wraps */
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important; /* Alternative property */
+    white-space: normal !important;
+    max-width: 100%; /* Ensure content stays within bounds */
 }
 [data-testid="stSidebar"] h1,
 [data-testid="stSidebar"] h2,
@@ -51,13 +52,43 @@ html, body, [class*="st-"] {
 [data-testid="stSidebar"] strong {
     color: #FFFFFF !important;
     overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
     white-space: normal !important;
+    max-width: 100%;
 }
 [data-testid="stSidebar"] a {
     color: #ADD8E6 !important;
     overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
     white-space: normal !important;
 }
+
+/* Specifically target expander headers within the sidebar */
+[data-testid="stSidebar"] .streamlit-expanderHeader {
+    color: #FFFFFF !important; /* White text for header */
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle background */
+    border-radius: 0.25rem;
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem; /* Adjust padding if needed */
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+    white-space: normal !important;
+    line-height: 1.4; /* Improve line spacing */
+    max-width: 100%;
+}
+
+/* Ensure expander content in sidebar also wraps and uses white text */
+[data-testid="stSidebar"] .streamlit-expanderContent {
+     background-color: rgba(0, 0, 0, 0.2);
+     border-radius: 0.25rem;
+     color: #FFFFFF !important;
+     font-size: 0.8rem;
+     overflow-wrap: break-word !important;
+     word-wrap: break-word !important;
+     white-space: normal !important;
+     max-width: 100%;
+}
+
 
 [data-testid="stAppViewContainer"] > .main {
     background-color: #FFFFFF;
@@ -98,6 +129,7 @@ html, body, [class*="st-"] {
     color: #000000;
 }
 
+
 .streamlit-expanderHeader {
     color: #31333F;
     background-color: #F0F2F6;
@@ -134,8 +166,7 @@ html, body, [class*="st-"] {
     font-size: 0.8rem;
 }
 
-</style>
-"""
+</style>"""
 st.markdown(gradient_css, unsafe_allow_html=True)
 
 load_dotenv()
