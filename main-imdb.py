@@ -185,7 +185,7 @@ else:
     OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 if not QDRANT_URL or not QDRANT_API_KEY or not OPENAI_API_KEY:
-    st.error("🚨 Missing essential API keys or URL! Check your .env file (local) or Streamlit secrets (deployed).")
+    st.error("🚨 Missing essential API keys or URL! Check .env file (local) or Streamlit secrets (deployed).")
     st.stop()
 
 @st.cache_resource(show_spinner="Initializing AI models...")
