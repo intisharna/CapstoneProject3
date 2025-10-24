@@ -1,0 +1,9 @@
+streamlit==1.50.0
+langchain-openai==0.3.35
+langchain-qdrant==0.2.1
+langchain-community==0.3.30
+langgraph==0.6.8
+langchain-core==0.3.78
+python-dotenv==1.1.1
+qdrant-client==1.15.1
+pypdf==6.1.1
