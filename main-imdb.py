@@ -30,19 +30,33 @@ html, body, [class*="st-"] {
     background-attachment: fixed;
     background-size: cover;
     color: #FFFFFF;
+    width: 320px !important; /* Fixed width */
+    min-width: 320px !important; /* Ensure minimum width */
+    max-width: 320px !important; /* Ensure maximum width */
 }
-[data-testid="stSidebar"] *,
+
+/* Ensure text elements within sidebar wrap correctly */
+[data-testid="stSidebar"] div,
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] li,
+[data-testid="stSidebar"] label,
 [data-testid="stSidebar"] .st-emotion-cache-16txtl3 {
-    color: #FFFFFF;
+    color: #FFFFFF !important;
+    overflow-wrap: break-word !important; /* Force word wrapping */
+    white-space: normal !important; /* Ensure text wraps */
 }
-[data-testid="stSidebar"] .st-emotion-cache-16txtl3 h1,
-[data-testid="stSidebar"] .st-emotion-cache-16txtl3 h2,
-[data-testid="stSidebar"] .st-emotion-cache-16txtl3 h3,
-[data-testid="stSidebar"] .st-emotion-cache-16txtl3 strong {
-    color: #FFFFFF;
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3,
+[data-testid="stSidebar"] strong {
+    color: #FFFFFF !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
 }
-[data-testid="stSidebar"] .st-emotion-cache-16txtl3 a {
-    color: #ADD8E6;
+[data-testid="stSidebar"] a {
+    color: #ADD8E6 !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
 }
 
 [data-testid="stAppViewContainer"] > .main {
@@ -102,13 +116,13 @@ html, body, [class*="st-"] {
     line-height: 1.3;
 }
 .streamlit-expanderContent [data-testid="stMetricValue"] {
-    font-size: 0.8rem; 
+    font-size: 0.8rem;
     color: #1E88E5;
     padding-bottom: 0px;
     margin-bottom: -5px;
 }
 .streamlit-expanderContent [data-testid="stMetricLabel"] {
-    font-size: 0.7rem; 
+    font-size: 0.7rem;
     color: #4F4F4F;
     margin-bottom: 0px;
     padding-bottom: 0px;
