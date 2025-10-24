@@ -32,7 +32,7 @@ html, body, [class*="st-"] {
     width: 320px !important;
     min-width: 320px !important;
     max-width: 320px !important;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden;
 }
 
 [data-testid="stSidebar"] div,
@@ -42,9 +42,9 @@ html, body, [class*="st-"] {
 [data-testid="stSidebar"] .st-emotion-cache-16txtl3 {
     color: #FFFFFF !important;
     overflow-wrap: break-word !important;
-    word-wrap: break-word !important; /* Alternative property */
+    word-wrap: break-word !important;
     white-space: normal !important;
-    max-width: 100%; /* Ensure content stays within bounds */
+    max-width: 100%;
 }
 [data-testid="stSidebar"] h1,
 [data-testid="stSidebar"] h2,
@@ -63,21 +63,19 @@ html, body, [class*="st-"] {
     white-space: normal !important;
 }
 
-/* Specifically target expander headers within the sidebar */
 [data-testid="stSidebar"] .streamlit-expanderHeader {
-    color: #FFFFFF !important; /* White text for header */
-    background-color: rgba(255, 255, 255, 0.1); /* Subtle background */
+    color: #FFFFFF !important;
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 0.25rem;
     font-size: 0.9rem;
-    padding: 0.5rem 0.75rem; /* Adjust padding if needed */
+    padding: 0.5rem 0.75rem;
     overflow-wrap: break-word !important;
     word-wrap: break-word !important;
     white-space: normal !important;
-    line-height: 1.4; /* Improve line spacing */
+    line-height: 1.4;
     max-width: 100%;
 }
 
-/* Ensure expander content in sidebar also wraps and uses white text */
 [data-testid="stSidebar"] .streamlit-expanderContent {
      background-color: rgba(0, 0, 0, 0.2);
      border-radius: 0.25rem;
